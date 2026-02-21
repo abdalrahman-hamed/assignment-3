@@ -16,7 +16,47 @@ namespace assignment_3.Classes
             Dictionary<char, int> dic = new Dictionary<char, int>();
 
             foreach (var item in str)
+            {using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace assignment_3.Classes
+{
+    internal class Counter
+    {
+        private string str;
+        Dictionary<char, int> dic = new Dictionary<char, int>();
+
+        public Counter(string str)
+        {
+            this.str = str;
+        }
+        private void letterCounter()
+        {
+            foreach (var item in str)
             {
+                if (dic.ContainsKey(item))
+                {
+                    dic[item]++;
+                }
+                else
+                {
+                    dic.Add(item, 1);
+                }
+            }
+
+        }
+        public void print()
+        {
+            letterCounter();
+            foreach (var item in dic    )
+            {
+                Console.WriteLine($"{item.Key} : {item.Value}");
+            }
+        }
+    }
+}
+
                 if (dic.ContainsKey(item))
                 {
                     dic[item]++;
